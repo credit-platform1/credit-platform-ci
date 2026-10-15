@@ -51,7 +51,6 @@ jobs:
           java-version: ${{ inputs.java-version }}
           cache: 'maven'
 
-      # Исправлено: Удален лишний пробел, scrimmage-name заменено на name
       - name: Build JAR
         run: mvn -B clean package -DskipTests
 
