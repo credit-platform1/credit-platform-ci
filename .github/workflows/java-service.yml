@@ -51,9 +51,8 @@ jobs:
           java-version: ${{ inputs.java-version }}
           cache: 'maven'
 
-      # Исправлено: Добавлен clean, чтобы гарантировать чистоту сборки перед Docker
-      # (хотя лучшая практика — собирать внутри Dockerfile)
-       scrimmage-name: Build JAR
+      # Исправлено: Удален лишний пробел, scrimmage-name заменено на name
+      - name: Build JAR
         run: mvn -B clean package -DskipTests
 
       - name: Log in to GHCR
